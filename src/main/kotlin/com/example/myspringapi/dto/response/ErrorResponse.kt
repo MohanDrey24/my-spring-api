@@ -1,8 +1,8 @@
-package com.example.my_spring_api.dto.response
+package com.example.myspringapi.dto.response
 
 import org.springframework.http.HttpStatus
 
 data class ErrorResponse(
     val status: HttpStatus,
-    val message: String?
+    val message: String?,
 )

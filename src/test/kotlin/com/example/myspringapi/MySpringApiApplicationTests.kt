@@ -1,13 +1,10 @@
-package com.example.my_spring_api
+package com.example.myspringapi
 
-import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
 class MySpringApiApplicationTests {
-
-	@Test
-	fun contextLoads() {
-	}
-
+    fun sample() {
+        println("sample")
+    }
 }
