@@ -1,5 +1,6 @@
 package com.example.myspringapi.entity
 
+import com.fasterxml.jackson.annotation.JsonManagedReference
 import jakarta.persistence.*
 import java.time.Instant
 import java.util.UUID
@@ -18,5 +19,6 @@ class User(
     @Column(name = "updated_at", nullable = false)
     val updatedAt: Instant = Instant.now(),
     @OneToMany(mappedBy = "user", cascade = [CascadeType.ALL], orphanRemoval = true)
+    @JsonManagedReference
     val accounts: MutableList<Account> = mutableListOf(),
 )

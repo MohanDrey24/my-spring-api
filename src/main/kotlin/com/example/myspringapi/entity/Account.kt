@@ -1,5 +1,6 @@
 package com.example.myspringapi.entity
 
+import com.fasterxml.jackson.annotation.JsonBackReference
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.FetchType
@@ -20,6 +21,7 @@ class Account(
     @Id
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonBackReference
     val user: User? = null,
     @Column(nullable = false)
     val hash: String = "",
