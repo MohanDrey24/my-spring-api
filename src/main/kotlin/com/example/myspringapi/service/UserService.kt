@@ -37,4 +37,8 @@ class UserService(
     fun getAllUser(): List<User> {
         return userRepository.findAll()
     }
+
+    fun findUser(email: String): User? {
+        return userRepository.findByEmail(email)
+    }
 }
