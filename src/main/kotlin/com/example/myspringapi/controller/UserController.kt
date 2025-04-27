@@ -2,6 +2,7 @@ package com.example.myspringapi.controller
 
 import com.example.myspringapi.dto.request.CreateUserRequest
 import com.example.myspringapi.dto.response.CreateUserResponse
+import com.example.myspringapi.entity.User
 import com.example.myspringapi.service.UserService
 import jakarta.validation.Valid
 import org.springframework.http.HttpStatus
@@ -13,6 +14,14 @@ import org.springframework.web.bind.annotation.*
 class UserController(
     private val userService: UserService,
 ) {
+
+    @GetMapping("/sample")
+    fun sample(): ResponseEntity<List<User>> {
+        val users = userService.getAllUser()
+
+        return ResponseEntity.ok(users)
+    }
+
     @PostMapping("/signup")
     fun signUp(
         @Valid @RequestBody request: CreateUserRequest,
